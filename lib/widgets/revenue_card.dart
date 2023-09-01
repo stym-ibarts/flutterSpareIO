@@ -12,18 +12,18 @@ class TotalRevenueCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // height: context.height * 0.375,
-      width: context.width * 0.5,
+      width: context.width * 0.78,
       decoration: BoxDecoration(
         color: AppColors.white,
         border: Border.all(color: AppColors.grey),
         borderRadius: BorderRadius.circular(8),
       ),
       padding: const EdgeInsets.all(15),
-      margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-      child: Column(
+      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+      child: const Column(
         children: [
           Row(
-            children: const [
+            children: [
               Text(
                 'Total Revenue',
                 style: TextStyle(
@@ -66,9 +66,9 @@ class TotalRevenueCard extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10.0),
+            padding: EdgeInsets.symmetric(vertical: 10.0),
             child: Row(
-              children: const [
+              children: [
                 Text(
                   'UGX50.4M',
                   style: TextStyle(
@@ -98,7 +98,7 @@ class TotalRevenueCard extends StatelessWidget {
               ],
             ),
           ),
-          const MyColumnChart(),
+          MyColumnChart(),
         ],
       ),
     );

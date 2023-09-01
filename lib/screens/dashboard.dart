@@ -20,21 +20,28 @@ class Dashboard extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const TopBar(
-              title: 'Overview',
-            ),
+          children: [ const TopBar(   title: 'Overview'),
             Column(
               children: [
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     FourTiles(),
+                  ],
+                ),
+                const Row(
+                  children: [
                     Expanded(child: ExpensesCard())
                   ],
                 ),
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     TotalRevenueCard(),
+                    // Expanded(child: Progressor())
+                  ],
+                ),
+                const Row(
+                  children: [
+                    // TotalRevenueCard(),
                     Expanded(child: Progressor())
                   ],
                 ),

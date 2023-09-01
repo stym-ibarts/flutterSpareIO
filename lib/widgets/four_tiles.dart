@@ -8,8 +8,8 @@ class FourTiles extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
+    return Expanded(
+      // padding: const EdgeInsets.all(10.0),
       child: Column(
         children: [
           Row(
@@ -17,14 +17,14 @@ class FourTiles extends StatelessWidget {
               TileWidget(
                 title: 'Today\'s Orders',
                 value: '60',
-                h: 0.17,
-                w: 0.17,
+                h: 0.15,
+                w: 0.35,
               ),
               TileWidget(
                 title: 'Today\'s Revenue',
                 value: '15M',
-                h: 0.17,
-                w: 0.17,
+                h: 0.15,
+                w: 0.35,
                 isSelected: true,
               ),
             ],
@@ -34,14 +34,14 @@ class FourTiles extends StatelessWidget {
               TileWidget(
                 title: 'Sales this Month',
                 value: '43',
-                h: 0.17,
-                w: 0.17,
+                h: 0.15,
+                w: 0.35,
               ),
               TileWidget(
                 title: 'Profit/Loss',
                 value: '2.5M',
-                h: 0.17,
-                w: 0.17,
+                h: 0.15,
+                w: 0.35,
                 hasIcon: true,
               ),
             ],

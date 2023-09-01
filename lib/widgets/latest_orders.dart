@@ -7,116 +7,121 @@ class LatestOrders extends StatelessWidget {
   double wf = 0;
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      wf = constraints.maxWidth - 25;
-      return Container(
-        width: constraints.maxWidth,
-        decoration: BoxDecoration(
-          color: AppColors.white,
-          border: Border.all(color: AppColors.grey),
-          borderRadius: BorderRadius.circular(8),
-        ),
-        margin: const EdgeInsets.all(25),
-        padding: const EdgeInsets.all(15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const Text(
-              'Latest Orders',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+  return LayoutBuilder(builder: (context, constraints) {
+  wf = constraints.maxWidth - 25;
+  return Container(
+      width: constraints.maxWidth,
+      decoration: BoxDecoration(
+        color: AppColors.white,
+        border: Border.all(color: AppColors.grey),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      margin: const EdgeInsets.all(25),
+      padding: const EdgeInsets.all(10),
+     child: SingleChildScrollView(
+    scrollDirection: Axis.vertical,
+    child: 
+       Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch, // Use CrossAxisAlignment.stretch to make children expand horizontally
+        children: [
+          const Text(
+            'Latest Orders',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            height: 45,
+            decoration: const BoxDecoration(
+              color: AppColors.orange,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(5),
+                topRight: Radius.circular(5),
+              ),
             ),
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 10),
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              height: 45,
-              decoration: const BoxDecoration(
-                color: AppColors.orange,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(5),
-                  topRight: Radius.circular(5),
+            child: Row(
+              children: [
+                SizedBox(
+                  width: wf * 0.22,
+                  child: const Text(
+                    'Products',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: AppColors.white,
+                    ),
+                  ),
                 ),
-              ),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: wf * 0.22,
-                    child: const Text(
-                      'Products',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: AppColors.white,
-                      ),
+                SizedBox(
+                  width: wf * 0.1,
+                  child: const Text(
+                    'Order ID',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: AppColors.white,
                     ),
                   ),
-                  SizedBox(
-                    width: wf * 0.1,
-                    child: const Text(
-                      'Order ID',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: AppColors.white,
-                      ),
+                ),
+                SizedBox(
+                  width: wf * 0.12,
+                  child: const Text(
+                    'Date',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: AppColors.white,
                     ),
                   ),
-                  SizedBox(
-                    width: wf * 0.12,
-                    child: const Text(
-                      'Date',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: AppColors.white,
-                      ),
+                ),
+                SizedBox(
+                  width: wf * 0.17,
+                  child: const Text(
+                    'Customer name',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: AppColors.white,
                     ),
                   ),
-                  SizedBox(
-                    width: wf * 0.17,
-                    child: const Text(
-                      'Customer name',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: AppColors.white,
-                      ),
+                ),
+                SizedBox(
+                  width: wf * 0.1,
+                  child: const Text(
+                    'Status',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: AppColors.white,
                     ),
                   ),
-                  SizedBox(
-                    width: wf * 0.1,
-                    child: const Text(
-                      'Status',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: AppColors.white,
-                      ),
+                ),
+                SizedBox(
+                  width: wf * 0.14,
+                  child: const Text(
+                    'Amount',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: AppColors.white,
                     ),
                   ),
-                  SizedBox(
-                    width: wf * 0.14,
-                    child: const Text(
-                      'Amount',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: AppColors.white,
-                      ),
+                ),
+                SizedBox(
+                  width: wf * 0.06,
+                  child: const Text(
+                    'Action',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: AppColors.white,
                     ),
                   ),
-                  SizedBox(
-                    width: wf * 0.06,
-                    child: const Text(
-                      'Action',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: AppColors.white,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-            OrderList(wf: wf)
-          ],
-        ),
-      );
-    });
+          ),
+          OrderList(wf: wf)
+        ],
+      ),
+    ),
+  );
+});
+
+
   }
 }
 

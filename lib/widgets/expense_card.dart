@@ -18,7 +18,7 @@ class ExpensesCard extends StatelessWidget {
         border: Border.all(color: AppColors.grey),
         borderRadius: BorderRadius.circular(8),
       ),
-      margin: const EdgeInsets.only(left: 20, right: 25),
+      margin: const EdgeInsets.only(left: 15, right: 25),
       padding: const EdgeInsets.only(left: 25),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,9 +37,12 @@ class ExpensesCard extends StatelessWidget {
             children: [
               CircularChart(),
               const Spacer(),
-              Column(
+              const Spacer(),
+              const Spacer(),
+              const Spacer(),
+              const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Rower(
                     title: 'Expenses',
                     color: AppColors.lightBlue,
@@ -53,9 +56,6 @@ class ExpensesCard extends StatelessWidget {
                   ),
                 ],
               ),
-              const Spacer(),
-              const Spacer(),
-              const Spacer(),
             ],
           ),
         ],
